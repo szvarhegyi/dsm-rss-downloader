@@ -36,7 +36,7 @@ The feed configuration defines multiple feed sources and their download destinat
 ```yaml
 services:
   app:
-    image: szvarhegyi/dsm-rss-downloader
+    image: varhegyisz/dsm-rss-downloader
     environment:
       - DSM_HOST=https://192.168.0.180:5001
       - DSM_USERNAME=admin
