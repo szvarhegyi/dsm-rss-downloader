@@ -92,7 +92,7 @@ def process_feeds():
 
 # ====== FUTTATÁS =======
 if __name__ == "__main__":
-    INTERVAL_SECONDS = 60  # 1 percenként újra
+    INTERVAL_SECONDS = int(os.getenv('RSS_INTERVAL_SECONDS', 60))
     while True:
         try:
             process_feeds()

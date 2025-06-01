@@ -13,6 +13,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY ./src/ ./
 
-RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y ca-certificates supervisor && rm -rf /var/lib/apt/lists/*
 
-CMD ["python", "-W", "ignore", "main.py"]
+#CMD ["python", "-W", "ignore", "main.py"]
+
+EXPOSE 8000
+
+CMD ["supervisord", "-n", "-c", "/etc/supervisord.conf"]
